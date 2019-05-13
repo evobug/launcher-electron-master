@@ -1,0 +1,25 @@
+.stroke ( @border: 1px, @gauss: 1px, @color: #fff) {
+	text-shadow: 0 @border @gauss @color,
+		0 -@border @gauss @color,
+	-@border 0 @gauss @color,
+	@border 0 @gauss @color,
+	@border @border @gauss @color,
+		@border -@border @gauss @color,
+	-@border @border @gauss @color,
+		-@border -@border @gauss @color;
+}
+
+.strokeShadowed(@border: 1px, @color: #fff) {
+	-webkit-text-stroke: @border / 2 rgba(red(@color), green(@color), blue(@color), 0.5);
+	text-shadow: 0 @border * 3 0 @color,
+		-@border -@border 0 @color,
+		@border -@border 0 @color,
+	-@border @border 0 @color,
+	@border @border 0 @color;
+}
+
+.baseFont(@fontSize: 22px, @strokeColor: @bd-color) {
+	color: #fff;
+	font-size: @fontSize;
+	.stroke(1px, 1px, @strokeColor);
+}

@@ -1,0 +1,101 @@
+{
+	"name": "a2r-launcher",
+	"productName": "Audition 2 Revival",
+	"version": "1.1.8",
+	"description": "Audition 2 Revival Launcher",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron-forge start",
+		"package": "electron-forge package",
+		"make": "electron-forge make",
+		"make32": "electron-forge make --arch ia32",
+		"publish": "electron-forge publish --arch ia32"
+	},
+	"repository": "https://gitlab.wadimich.ru/audition2revival/launcher-electron",
+	"keywords": [
+		"Electron",
+		"quick",
+		"start",
+		"tutorial",
+		"demo"
+	],
+	"author": "Wadimich",
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.34",
+		"@electron-forge/maker-deb": "^6.0.0-beta.34",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.34",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.34",
+		"@electron-forge/maker-zip": "^6.0.0-beta.34",
+		"@electron-forge/plugin-auto-unpack-natives": "^6.0.0-beta.34",
+		"asar": "^1.0.0",
+		"electron": "^4.1.4",
+		"@electron-forge/publisher-electron-release-server": "^6.0.0-beta.34",
+		"@electron-forge/publisher-s3": "^6.0.0-beta.34"
+	},
+	"dependencies": {
+		"electron-download-manager": "^2.3.0",
+		"electron-is-dev": "^1.1.0",
+		"electron-log": "^3.0.5",
+		"electron-squirrel-startup": "^1.0.0",
+		"mkdir-recursive": "^0.4.0",
+		"rapid-downloader": "^1.2.5"
+	},
+	"config": {
+		"forge": {
+			"packagerConfig": {
+				"icon": "build/icon.ico"
+			},
+			"makers": [
+				{
+					"name": "@electron-forge/maker-squirrel",
+					"config": {
+						"name": "A2R_Launcher",
+						"setupIcon": "build/icon.ico",
+						"iconUrl": "http://d.aurevival.ru/icons/Application.ico",
+						"setupExe": "au2_setup.exe",
+						"title": "Audition 2 Revival"
+					}
+				},
+				{
+					"name": "@electron-forge/maker-zip",
+					"platforms": [
+						"darwin"
+					]
+				},
+				{
+					"name": "@electron-forge/maker-deb",
+					"config": {}
+				},
+				{
+					"name": "@electron-forge/maker-rpm",
+					"config": {}
+				}
+			],
+			"electronPackagerConfig": {
+				"asar": true,
+				"extraResource": [],
+				"packageManager": "yarn",
+				"version-string": {
+					"FileDescription": "Audition 2 Revival Launcher",
+					"ProductName": "Audition 2 Revival",
+					"CompanyName": "Wadimich"
+				},
+				"win32metadata": {
+					"FileDescription": "Audition 2 Revival Launcher",
+					"ProductName": "Audition 2 Revival",
+					"CompanyName": "Wadimich"
+				}
+			},
+			"publishers": [
+				{
+					"name": "@electron-forge/publisher-electron-release-server",
+					"config": {
+						"baseUrl": "http://aurevival.ru:1337",
+						"username": "wadimich",
+						"password": "fx56tYop"
+					}
+				}
+			]
+		}
+	}
+}

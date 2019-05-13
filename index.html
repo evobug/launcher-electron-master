@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Программа запуска Audition 2 Revival</title>
+	
+	<link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="main">
+		<div class="changelogBlock">
+			<div class="changelogTitle">Внесенные изменения</div>
+			<div class="changelogText">Версия лаунчера 1.1.8</div>
+		</div>
+		
+		<div class="artBlock">
+			<img src="assets/img/logo.webp" alt="">
+		</div>
+	</div>
+	
+	<div class="progressBlock">
+		<div class="progressTitle">Статус:</div>
+		<div class="progressContainer">
+			<div class="progressBar">
+				<div id="progressLine" class="progressLine"></div>
+				<div id="progressBarText" class="progressBarText">Проверка целостности...</div>
+			</div>
+			<button id="launchBtn" class="launchBtn">Запуск</button>
+		</div>
+	</div>
+</div>
+
+</body>
+<script>
+	// You can also require other files to run in this process
+	require('./renderer.js');
+</script>
+</html>

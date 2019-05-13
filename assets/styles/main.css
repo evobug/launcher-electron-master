@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'MachineC';
+  src: url('../fonts/10733.otf') format('opentype');
+  font-style: normal;
+}
+/**
+Base button colors
+ */
+* {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: url("../img/background.webp") no-repeat fixed 50% transparent;
+  background-size: cover;
+  color: #fff;
+}
+.wrapper .main {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.wrapper .main .changelogBlock .changelogTitle {
+  font-family: "MachineC", sans-serif;
+  text-shadow: 0 1px 1px #bd66a0, 0 -1px 1px #bd66a0, -1px 0 1px #bd66a0, 1px 0 1px #bd66a0, 1px 1px 1px #bd66a0, 1px -1px 1px #bd66a0, -1px 1px 1px #bd66a0, -1px -1px 1px #bd66a0;
+  text-align: center;
+  font-size: 24px;
+}
+.wrapper .main .changelogBlock .changelogText {
+  height: 350px;
+  background-color: #fff;
+  border: 1px solid #bd66a0;
+  box-sizing: border-box;
+  color: #000;
+  font-family: Tahoma, sans-serif;
+  padding: 10px;
+  overflow-y: auto;
+}
+.wrapper .main .artBlock {
+  margin-top: 28px;
+}
+.wrapper .progressBlock {
+  margin: 30px 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .progressBlock .progressTitle {
+  font-family: "MachineC", sans-serif;
+  text-shadow: 0 1px 1px #bd66a0, 0 -1px 1px #bd66a0, -1px 0 1px #bd66a0, 1px 0 1px #bd66a0, 1px 1px 1px #bd66a0, 1px -1px 1px #bd66a0, -1px 1px 1px #bd66a0, -1px -1px 1px #bd66a0;
+  font-size: 24px;
+  margin-left: 10px;
+}
+.wrapper .progressBlock .progressContainer {
+  display: flex;
+  flex-direction: row;
+}
+.wrapper .progressBlock .progressContainer .progressBar {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  text-shadow: 0 1px 1px #cc0c73, 0 -1px 1px #cc0c73, -1px 0 1px #cc0c73, 1px 0 1px #cc0c73, 1px 1px 1px #cc0c73, 1px -1px 1px #cc0c73, -1px 1px 1px #cc0c73, -1px -1px 1px #cc0c73;
+  height: 36px;
+  border: 1px solid #6c6c6c;
+  box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to top, #666164, #666164 49%, #999999 52%, #999999);
+  border-radius: 10px;
+}
+.wrapper .progressBlock .progressContainer .progressBar .progressLine {
+  height: 32px;
+  background: linear-gradient(to top, #db128e, #db128e 49%, #f536ac 52%, #f536ac);
+  box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin-top: 2px;
+  transition: width 0.25s ease-out;
+}
+.wrapper .progressBlock .progressContainer .progressBar .progressBarText {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  padding-top: 7px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.wrapper .progressBlock .progressContainer .launchBtn {
+  width: 150px;
+  height: 38px;
+  padding: 0;
+  margin-left: 10px;
+  -webkit-appearance: unset;
+  padding-bottom: 3px;
+  cursor: pointer;
+  font-family: "MachineC", sans-serif;
+  background: linear-gradient(to top, #db128e, #db128e 49%, #f536ac 52%, #f536ac);
+  box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid #cc0c73;
+  border-radius: 10px;
+  transition: all 0.1s linear;
+  color: #fff;
+  font-size: 22px;
+  text-shadow: 0 1px 1px #cc0c73, 0 -1px 1px #cc0c73, -1px 0 1px #cc0c73, 1px 0 1px #cc0c73, 1px 1px 1px #cc0c73, 1px -1px 1px #cc0c73, -1px 1px 1px #cc0c73, -1px -1px 1px #cc0c73;
+  outline: 0;
+}
+.wrapper .progressBlock .progressContainer .launchBtn:hover {
+  text-shadow: 0 1px 1px #d80073, 0 -1px 1px #d80073, -1px 0 1px #d80073, 1px 0 1px #d80073, 1px 1px 1px #d80073, 1px -1px 1px #d80073, -1px 1px 1px #d80073, -1px -1px 1px #d80073;
+  background: linear-gradient(to top, #ff4dbb, #ff4dbb 49%, #ff80ce 52%, #ff80ce);
+}
+.wrapper .progressBlock .progressContainer .launchBtn:active {
+  text-shadow: 0 1px 1px #d80073, 0 -1px 1px #d80073, -1px 0 1px #d80073, 1px 0 1px #d80073, 1px 1px 1px #d80073, 1px -1px 1px #d80073, -1px 1px 1px #d80073, -1px -1px 1px #d80073;
+  background: linear-gradient(to top, #b31b78, #b31b78 49%, #d9419f 52%, #d9419f);
+}
+.wrapper .progressBlock .progressContainer .launchBtn:disabled {
+  cursor: default;
+  border-color: #6c6c6c;
+  text-shadow: 0 1px 1px #6c6c6c, 0 -1px 1px #6c6c6c, -1px 0 1px #6c6c6c, 1px 0 1px #6c6c6c, 1px 1px 1px #6c6c6c, 1px -1px 1px #6c6c6c, -1px 1px 1px #6c6c6c, -1px -1px 1px #6c6c6c;
+  background: linear-gradient(to top, #666164, #666164 49%, #999999 52%, #999999);
+}
+/*# sourceMappingURL=main.css.map */
